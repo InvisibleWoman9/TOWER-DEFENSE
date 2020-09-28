@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Soldat: ENEMY
 {
-   public GameObject bullet;
+   
    
 }
 

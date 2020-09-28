@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Mitrailleuse: ENEMY
 {
-    //Tir toutes les 3 secondes, enemy evolué (2 de degats)
+    //Tir toutes les 0.5 secondes, enemy evolué (0.5 de degats)
     //20/30 points de vie, est puissant mais moins resistant que le soldat
 }

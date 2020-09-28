@@ -6,6 +6,7 @@ TagManager:
   tags:
   - POSELA
   - ENEMY
+  - TOWER
   layers:
   - Default
   - TransparentFX

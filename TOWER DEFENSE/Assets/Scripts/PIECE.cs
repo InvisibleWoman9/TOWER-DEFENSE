@@ -26,4 +26,20 @@ public class PIECE : MonoBehaviour
         IsAlive = false;
         Destroy(gameObject);
     }
+
+    //Donne l'ennemi le plus proche (info)
+    public Transform ClosestEnemy(List<Transform> list)
+    {
+        if(list.Count < 1) return null;
+        Transform target = list[0].transform;
+
+        for(int i = 0; i < list.Count; i ++)
+        {
+            if(Vector3.Distance(transform.position, target.position) > Vector3.Distance(transform.position, list[i].transform.position))
+            {
+                target = list[i].transform;
+            }
+        }
+        return target;
+    }
 }

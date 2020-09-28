@@ -5,33 +5,52 @@ using UnityEngine.AI;
 
 public class ENEMY : PIECE
 {
-    public static List<ENEMY> all = new List<ENEMY>();
+    public static List<Transform> all = new List<Transform>();
     
     
 
-    public float FireRate;
-
+    public float FireRate, portee;
+    float chrono;
     public NavMeshAgent agent;
-    public Transform destination;
+    public Transform destination, canon;
+    public GameObject bullet;
+
 
     public void Awake()
     {
         destination = GameObject.Find("ARRIVEE").transform;
-        all.Add(this);
+        all.Add(this.transform);
         agent.SetDestination(destination.position);
     }
 
     void OnDestroy()
     {
-        all.Remove(this);
+        all.Remove(this.transform);
     }
 
     public void Update()
     {
+        chrono += Time.deltaTime;
+        if(chrono > FireRate)
+        {
+            chrono = 0;
+            Shoot();
+
+        }
+
 
     }
     
-    
+    public void Shoot()
+    {
+        Transform target = ClosestEnemy(TOUR.all);
+        if(target != null && Vector3.Distance(transform.position, target.position) < portee)
+        {
+            canon.LookAt(target.Find("GRAPHICS/CANON"));
+            Debug.Log(target);
+            Instantiate(bullet, canon.position, canon.rotation);
+        }
+    }
 
     
 

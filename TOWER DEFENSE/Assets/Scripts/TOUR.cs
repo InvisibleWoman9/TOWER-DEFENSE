@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TOUR : PIECE
 {
-    
+    public static List<Transform> all = new List<Transform>();
 
     public int FireRate;
 
@@ -17,11 +17,20 @@ public class TOUR : PIECE
         
     }
 
+    public void Awake()
+    {
+        all.Add(this.transform);
+    }
+
+    void OnDestroy()
+    {
+        all.Remove(this.transform);
+    }
     
     void Update()
     {
         chrono += Time.deltaTime;
-        Transform target = ClosestEnemy();
+        Transform target = ClosestEnemy(ENEMY.all);
         if(target != null)
         {
             canon.LookAt(target);
@@ -43,21 +52,7 @@ public class TOUR : PIECE
 
 
 
-    //Donne l'ennemi le plus proche (info)
-    public Transform ClosestEnemy()
-    {
-        if(ENEMY.all.Count < 1) return null;
-        Transform target = ENEMY.all[0].transform;
 
-        for(int i = 0; i < ENEMY.all.Count; i ++)
-        {
-            if(Vector3.Distance(transform.position, target.position) > Vector3.Distance(transform.position, ENEMY.all[i].transform.position))
-            {
-                target = ENEMY.all[i].transform;
-            }
-        }
-        return target;
-    }
 
 
 }//FIN CLASS TOUR
