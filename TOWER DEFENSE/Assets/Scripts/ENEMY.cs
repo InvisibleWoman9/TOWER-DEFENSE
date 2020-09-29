@@ -14,6 +14,7 @@ public class ENEMY : PIECE
     public NavMeshAgent agent;
     public Transform destination, canon;
     public GameObject bullet;
+    
 
 
     public void Awake()
@@ -25,6 +26,11 @@ public class ENEMY : PIECE
 
     void OnDestroy()
     {
+        GameManager.access.enemieskilled ++;
+        if(GameManager.access.enemieskilled > GameManager.access.maxenemies)
+        {
+            GameManager.access.Victory();
+        }
         all.Remove(this.transform);
     }
 
@@ -46,13 +52,19 @@ public class ENEMY : PIECE
         Transform target = ClosestEnemy(TOUR.all);
         if(target != null && Vector3.Distance(transform.position, target.position) < portee)
         {
-            canon.LookAt(target.Find("GRAPHICS/CANON"));
-            Debug.Log(target);
+            canon.LookAt(target.Find("GRAPHICS/CANON"));            
             Instantiate(bullet, canon.position, canon.rotation);
         }
     }
 
-    
+    void OnTriggerEnter(Collider col)
+    {
+        if(col.gameObject.name == "ARRIVEE")
+        {
+            GameManager.access.GameOver();
+            
+        }
+    }
 
 
 }//FIN CLASS ENEMIES

@@ -17,6 +17,7 @@ public class PIECE : MonoBehaviour
     {
         Health -= Amount;
         if(Health <= 0) Die();
+        Debug.Log(gameObject.name + " " + Health);
     }
 
 

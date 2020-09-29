@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 821180153042252898}
   m_Layer: 8
   m_Name: GRAPHICS
-  m_TagString: Untagged
+  m_TagString: TOWER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 821180153343385551}
   m_Layer: 8
   m_Name: COLLIDER
-  m_TagString: Untagged
+  m_TagString: TOWER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 821180153774067060}
   m_Layer: 8
   m_Name: CANON
-  m_TagString: Untagged
+  m_TagString: TOWER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 821180153935724953}
   m_Layer: 8
   m_Name: BASE TOWER
-  m_TagString: Untagged
+  m_TagString: TOWER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +229,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 08ad111ae15aa134189878ac3b6e26bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -259,10 +259,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 821180154153176156}
-  - component: {fileID: 4430143353592223968}
+  - component: {fileID: -1720819066044506706}
   m_Layer: 8
-  m_Name: PREFAB TOWER
-  m_TagString: Untagged
+  m_Name: TOWERSHOOT
+  m_TagString: TOWER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,7 +283,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4430143353592223968
+--- !u!114 &-1720819066044506706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,10 +292,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 821180154153176131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fefeb201b79944429c7e97e68951132, type: 3}
+  m_Script: {fileID: 11500000, guid: 9dd7ca9728839c741b2c7a02f8f7a497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 30
+  Health: 60
   IsAlive: 1
   FireRate: 4
   bullet: {fileID: 7078155864176494148, guid: e2f00aca6d780ed44a77a72fa29dc83d, type: 3}
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 821180154704937368}
   m_Layer: 8
   m_Name: MILIEU TOWER
-  m_TagString: Untagged
+  m_TagString: TOWER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,7 +359,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 08ad111ae15aa134189878ac3b6e26bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 8526816849474110120}
   m_Layer: 8
   m_Name: CANON
-  m_TagString: Untagged
+  m_TagString: TOWER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 5210067027393329239}
   m_Layer: 8
   m_Name: BOUCHE
-  m_TagString: Untagged
+  m_TagString: TOWER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -18,6 +18,7 @@ public class BulletScript : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
+        Debug.Log(col.transform.tag);
         if(col.transform.CompareTag(target))
         {
             col.transform.GetComponentInParent<PIECE>().TakeDamage(damage);

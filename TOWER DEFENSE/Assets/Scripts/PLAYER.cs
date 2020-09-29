@@ -1,20 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PLAYER : MonoBehaviour
 {
     public List<GameObject> Tours;
+    int tourselectionnee;
+    bool peuposer;
+    float chrono;
     Transform blocselectionne;
+    public Text inputs;
+    float tempsnecessaire;
 
     void Start()
     {
-        
+        tourselectionnee = 0;
+        chrono = 10000f;
+        tempsnecessaire = 1f;
     }
 
 
     void Update()
     {
+        if(GameManager.access.isPlaying) chrono += Time.deltaTime;
+        if(peuposer == false && chrono >tempsnecessaire)
+        {
+            inputs.color = new Color(1,1,1, 1f);
+            peuposer = true;
+        }
         RaycastHit hit;
         Ray ray =Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -42,19 +56,26 @@ public class PLAYER : MonoBehaviour
         }
 
 
-        if(Input.GetMouseButtonDown(0) && blocselectionne != null)
+        if(Input.GetMouseButtonDown(0) && blocselectionne != null && peuposer)
         {
             PoseTour(blocselectionne); 
         }
+
+        if(Input.GetKeyDown(KeyCode.A)) tourselectionnee = 0;
+        if(Input.GetKeyDown(KeyCode.Z)) tourselectionnee = 1;
+        if(Input.GetKeyDown(KeyCode.E)) tourselectionnee = 2;
 
 
     }
 
     void PoseTour(Transform bloc)
     {
-        if(Tours.Count < 1) return;
-        Instantiate(Tours[0], bloc.position, Quaternion.identity);
-        Tours.RemoveAt(0);
+        chrono = 0;
+        tempsnecessaire +=0.5f;
+        peuposer = false;
+        inputs.color = new Color(1,1,1, 0.3f);
+        Instantiate(Tours[tourselectionnee], bloc.position, Quaternion.identity);
+        
     }
 
 
