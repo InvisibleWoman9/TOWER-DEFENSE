@@ -14,6 +14,7 @@ public class ENEMY : PIECE
     public NavMeshAgent agent;
     public Transform destination, canon;
     public GameObject bullet;
+    public AudioClip tir;
     
 
 
@@ -52,7 +53,8 @@ public class ENEMY : PIECE
         Transform target = ClosestEnemy(TOUR.all);
         if(target != null && Vector3.Distance(transform.position, target.position) < portee)
         {
-            canon.LookAt(target.Find("GRAPHICS/CANON"));            
+            canon.LookAt(target.Find("GRAPHICS/CANON"));
+            AudioSource.PlayClipAtPoint(tir, Camera.main.transform.position, 0.05f);            
             Instantiate(bullet, canon.position, canon.rotation);
         }
     }

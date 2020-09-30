@@ -7,7 +7,7 @@ public class TOUR : PIECE
     public static List<Transform> all = new List<Transform>();
 
     public int FireRate;
-
+    public AudioClip tir;
     public GameObject bullet;
     public Transform canon, bouche;
     float chrono = 0;
@@ -46,7 +46,11 @@ public class TOUR : PIECE
     {
         Debug.Log("Shoot");
 
-        if(bullet) Instantiate(bullet,bouche.position , canon.rotation);
+        if(bullet)
+        {
+            Instantiate(bullet,bouche.position , canon.rotation);
+            AudioSource.PlayClipAtPoint(tir, Camera.main.transform.position, 0.2f);
+        } 
         chrono = 0;
     }
 

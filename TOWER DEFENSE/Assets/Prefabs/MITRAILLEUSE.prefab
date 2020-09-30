@@ -201,6 +201,7 @@ MonoBehaviour:
   destination: {fileID: 0}
   canon: {fileID: 8107964828205251699}
   bullet: {fileID: 7078155864176494148, guid: 01b31aa2e3068bd478f01f489ea850ed, type: 3}
+  tir: {fileID: 8300000, guid: cdeb7a5d9d7d37a46b3fb673edc4cca9, type: 3}
 --- !u!1 &2288148737533648180
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class BulletScript : MonoBehaviour
 
     void Start()
     {
+        
         rb.AddForce(transform.forward * speed, ForceMode.VelocityChange);
         Destroy(gameObject, 5f);
     }

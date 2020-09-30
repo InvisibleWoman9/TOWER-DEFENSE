@@ -29,6 +29,7 @@ public class PLAYER : MonoBehaviour
             inputs.color = new Color(1,1,1, 1f);
             peuposer = true;
         }
+        
         RaycastHit hit;
         Ray ray =Camera.main.ScreenPointToRay(Input.mousePosition);
 

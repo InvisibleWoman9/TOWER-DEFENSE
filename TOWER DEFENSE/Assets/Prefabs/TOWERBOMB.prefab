@@ -298,6 +298,7 @@ MonoBehaviour:
   Health: 20
   IsAlive: 1
   FireRate: 7
+  tir: {fileID: 8300000, guid: 04fb832002095b645b472fd0103e1178, type: 3}
   bullet: {fileID: 7078155864176494148, guid: 46e8e080d12923842a6157192cc9c460, type: 3}
   canon: {fileID: 8526816849474110120}
   bouche: {fileID: 5210067027393329239}
